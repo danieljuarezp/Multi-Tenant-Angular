@@ -8,7 +8,7 @@ export class TenantService {
   constructor() { }
 
   getTenantForHostname(hostname: string): Tenant {
-    console.log(hostname);
+    console.log("getTenantForHostname", hostname);
     return this.getTenantForHost(hostname.split(".")[0]);
   }
 
@@ -22,10 +22,12 @@ export class TenantService {
   }
 
   getTenantForHost(host: string): Tenant {
+    console.log("getTenantForHost", host)
     return this.getTenantForString(host);
   }
 
   getTenant(): Tenant {
+    console.log("getTenant", location.hostname)
     return this.getTenantForHostname(location.hostname);
   }
 
