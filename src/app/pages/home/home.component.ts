@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TenantService } from 'src/app/tenant/tenant.service';
 import {PlatformLocation } from '@angular/common';
+import { SampleService } from 'src/app/test.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,11 @@ import {PlatformLocation } from '@angular/common';
 export class HomeComponent implements OnInit {
   tenant: any = null;
 
-  constructor(private tenantService: TenantService, private router: Router, platformLocation: PlatformLocation) {
+  constructor(
+    private tenantService: TenantService, 
+    private router: Router, 
+    platformLocation: PlatformLocation,
+    private simpleService: SampleService) {
     console.log((platformLocation as any).location);
     console.log((platformLocation as any).location.href);
     console.log((platformLocation as any).location.origin);
@@ -30,6 +35,8 @@ export class HomeComponent implements OnInit {
     if (this.tenant == null) {
       this.tenant = 'vazio';
     }
+
+    console.log("sample service", this.simpleService.getHostname())
   }
 
 }
