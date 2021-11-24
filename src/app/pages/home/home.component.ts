@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TenantService } from 'src/app/tenant/tenant.service';
+import {PlatformLocation } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +11,10 @@ import { TenantService } from 'src/app/tenant/tenant.service';
 export class HomeComponent implements OnInit {
   tenant: any = null;
 
-  constructor(private tenantService: TenantService, private router: Router) {
-
+  constructor(private tenantService: TenantService, private router: Router, platformLocation: PlatformLocation) {
+    console.log((platformLocation as any).location);
+    console.log((platformLocation as any).location.href);
+    console.log((platformLocation as any).location.origin);
   }
 
   ngOnInit(): void {
