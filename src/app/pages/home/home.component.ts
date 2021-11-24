@@ -22,6 +22,11 @@ export class HomeComponent implements OnInit {
     console.log("home", location.hostname);
     this.tenant = this.tenantService.getTenant();
     console.log(this.tenant);
+
+    setTimeout(() => {
+
+      console.log("settimeout", window.location)
+    })
     if (this.tenant == null) {
       this.tenant = 'vazio';
     }
