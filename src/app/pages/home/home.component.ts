@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("test");
+    console.log("home", location.hostname);
     this.tenant = this.tenantService.getTenant();
     console.log(this.tenant);
     if (this.tenant == null) {
