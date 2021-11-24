@@ -1,7 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
 import { WINDOW } from './window.provider';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
 export class SampleService {
 
     constructor(@Inject(WINDOW) private window: Window) {
