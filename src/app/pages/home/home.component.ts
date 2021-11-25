@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
       console.log("settimeout", window.location)
     })
     if (this.tenant == null) {
-      this.tenant = 'vazio';
+      this.tenant = 'ningun tenant';
     }
 
     console.log("sample service", this.simpleService.getHostname())
