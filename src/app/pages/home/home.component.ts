@@ -39,4 +39,8 @@ export class HomeComponent implements OnInit {
     console.log("sample service", this.simpleService.getHostname())
   }
 
+  ngAfterViewChecked() {
+    console.log("App after view checked "+ this.router.url);
+  }
+
 }
