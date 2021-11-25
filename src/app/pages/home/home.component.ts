@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewChecked() {
-    console.log("App after view checked "+ this.router.url);
+    console.log("App after view checked "+ window.location);
   }
 
 }
